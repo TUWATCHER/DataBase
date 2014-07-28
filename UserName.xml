@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<head>
+<User number = "1">
+   	<Name>Admin</Name>
+	<Password>123456</Password>
+</User>
+</head>

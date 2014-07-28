@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfApplication1
 {
@@ -32,10 +21,17 @@ namespace WpfApplication1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var window1 = new Window1();
-            window1.Show(); //Navigation window call
+            var sr = new StreamReader(@"C:\Users\Ilya\Documents\GitHub\DataBase\UserName.txt", Encoding.ASCII);
+            string text = sr.ReadToEnd();
+            if (text == UserName.Text)
+            {
+                var window1 = new Window1();
+                window1.Show(); //Navigation window call
 
-            Close(); // close start window after call
+                Close(); // close start window after call
+            }
+            else MessageBox.Show("Error!");
+
         }
     }
 }
